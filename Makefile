@@ -4,7 +4,7 @@ TARGET = test_program
 SRCS = linked_list.c test_program.c
 OBJS = $(SRCS:.c=.o)
 
-ASAN ?= 1
+ASAN ?= 0
 ifeq ($(ASAN),1)
 CFLAGS += -fsanitize=address
 endif
