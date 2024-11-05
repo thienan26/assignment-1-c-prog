@@ -24,3 +24,6 @@ check-%: $(TARGET)
 	@echo "Running test case $*"
 	@./$(TARGET) $*
 	@echo "Test case $* passed"
+
+sample: $(OBJS) sample_test_case.o
+	$(CC) $(CFLAGS) -o test_sample linked_list.o sample_test_case.o	
