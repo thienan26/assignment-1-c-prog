@@ -6,7 +6,11 @@
 
 void insertNode(struct Node** p_head, struct Node* position, int data) 
 {
-    // your implementation
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = NULL;
+
+    assert (position !=NULL && 
 }
 
 void pushBack(struct Node** p_head, int data)
