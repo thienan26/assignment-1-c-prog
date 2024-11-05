@@ -1,6 +1,7 @@
 #include "linked_list.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <assert.h>
 
 void insertNode(struct Node** p_head, struct Node* position, int data) 
@@ -44,13 +45,14 @@ void displayList(struct Node* head) {
 // display the linked list to a string output
 void displayListToString(struct Node* head, char* output) {
     sprintf(output, "%s", "");
+    char temp_str[100];
     struct Node* temp = head;
     while (temp != NULL) {
-        char temp_str[100];
         sprintf(temp_str, "%d -> ", temp->data);
         strcat(output, temp_str);
         temp = temp->next;
     }
-    // concatenate NULL to the output string
-    sprintf(output, "%sNULL", output);
+    // concatenate NULL to the output string    
+    sprintf(temp_str, "NULL");
+    strcat(output, temp_str);
 }
